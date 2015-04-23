@@ -27,6 +27,23 @@
 					alert(person.name+" is crawling");
 					person.distance_travelled += 1;
 					return person.distance_travelled;
+				},
+				doSomething: function(){
+					var rand = Math.random()*100;
+					var returned_function;
+					if(rand <= 33.33){
+						returned_function = person.walk();
+						console.log(rand);
+						return returned_function;
+					} else if(rand <= 66.66){
+						returned_function = person.run();
+						console.log(rand);
+						return returned_function;
+					} else{
+						returned_function = person.crawl();
+						console.log(rand);
+						return returned_function;
+					}
 				}
 		}
 	</script>
@@ -34,10 +51,12 @@
 <body>
 	<div id='results'>
 		<script>
-			person.say_something('thank you');
-			person.run();
-			document.write("<br>"+person.distance_travelled);
-			
+			// person.say_something('thank you');
+			// person.run();
+			// person.walk();
+			// person.crawl();
+			// document.write("<br>"+person.distance_travelled);
+			document.write(person.doSomething());
 		</script>
 	</div>
 </body>
