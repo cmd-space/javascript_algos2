@@ -44,6 +44,16 @@
 						console.log(rand);
 						return returned_function;
 					}
+				},
+				fly: function(func1, func2){
+					var rand = Math.random() * 10;
+					if(rand <= 3){
+						document.write('FLYING!!!');
+						func1();
+					} else{
+						document.write('Failed to Fly...');
+						func2();
+					}
 				}
 		}
 	</script>
@@ -56,7 +66,10 @@
 			// person.walk();
 			// person.crawl();
 			// document.write("<br>"+person.distance_travelled);
-			document.write(person.doSomething());
+			// document.write(person.doSomething());
+			var x = function() {document.write('woot!');}
+			var y = function() {document.write('not woot!');}
+			person.fly(x,y);
 		</script>
 	</div>
 </body>
