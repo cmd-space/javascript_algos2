@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fundamentals 2</title>
+	<script>
+		var person = {
+				name: 'Trey',
+				distance_travelled: 0,
+				say_name: function(){
+					alert(person.name);
+				},
+				say_something: function(arg1){
+					document.write(person.name+" says '"+arg1+"'");
+				},
+				walk: function(){
+					alert(person.name+" is walking");
+					person.distance_travelled += 3;
+					return person.distance_travelled;
+				},
+				run: function(){
+					alert(person.name+" is running");
+					person.distance_travelled += 10;
+					return person.distance_travelled;
+				},
+				crawl: function(){
+					alert(person.name+" is crawling");
+					person.distance_travelled += 1;
+					return person.distance_travelled;
+				}
+		}
+	</script>
+</head>
+<body>
+	<div id='results'>
+		<script>
+			person.say_something('thank you');
+			person.run();
+			document.write("<br>"+person.distance_travelled);
+			
+		</script>
+	</div>
+</body>
+</html>
